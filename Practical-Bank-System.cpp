@@ -13,9 +13,9 @@ class account {
     static int ACCOUNT_NUMBER_COUNT;
     
     void createAccount(int x) {
-    cout<<"Creating Account Number 000000"<<x<<endl;
+    cout<<"\n\nCreating Account Number 000000"<<x<<endl;
     cout<<"Enter Customer Name: ";
-    getline(cin, CUSTOMER_NAME);
+    getline(cin >> ws, CUSTOMER_NAME, '\n');
     acc_type_wrong:
     cout<<"Enter account type(0 - Savings Account, 1 - Current Account) :";
     cin>>ACCOUNT_TYPE;
@@ -24,8 +24,8 @@ class account {
         goto acc_type_wrong;
     }
     ACCOUNT_NUMBER = x;
-    cout<<"Account Number 000000"<<ACCOUNT_NUMBER<<" Created.\n";
-    cout<<"Name: "<<CUSTOMER_NAME<<"\nAccount Type: "<<(ACCOUNT_TYPE==0?" Savings Account":" Current Account");
+    cout<<"Account Number 000000"<<ACCOUNT_NUMBER<<" Created. ";
+    cout<<"Name: "<<CUSTOMER_NAME<<" Account Type: "<<(ACCOUNT_TYPE==0?" Savings Account":" Current Account");
     ACCOUNT_NUMBER_COUNT += 1;
     }
 
@@ -35,8 +35,9 @@ int account::ACCOUNT_NUMBER_COUNT = 1;
 
 int main()
 {
-    account a;
-    a.createAccount(account::ACCOUNT_NUMBER_COUNT);
-
+    account a[3];
+    a[0].createAccount(account::ACCOUNT_NUMBER_COUNT);
+    a[1].createAccount(account::ACCOUNT_NUMBER_COUNT);
+    a[2].createAccount(account::ACCOUNT_NUMBER_COUNT);
     return 0;
 }
