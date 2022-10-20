@@ -24,20 +24,23 @@ class account {
         goto acc_type_wrong;
     }
     ACCOUNT_NUMBER = x;
-    cout<<"Account Number 000000"<<ACCOUNT_NUMBER<<" Created. ";
-    cout<<"Name: "<<CUSTOMER_NAME<<" Account Type: "<<(ACCOUNT_TYPE==0?" Savings Account":" Current Account");
+    
+    cout<<"| Account Number 000000"<<ACCOUNT_NUMBER<<" Created. ";
+    cout<<"| Name: "<<CUSTOMER_NAME<<" | Account Type: "<<(ACCOUNT_TYPE==0?" | Savings Account |":" | Current Account |");
+    
+
     ACCOUNT_NUMBER_COUNT += 1;
     }
 
 };
 
 int account::ACCOUNT_NUMBER_COUNT = 1;
-
+int x= account::ACCOUNT_NUMBER_COUNT;
 int main()
 {
     account a[3];
-    a[0].createAccount(account::ACCOUNT_NUMBER_COUNT);
-    a[1].createAccount(account::ACCOUNT_NUMBER_COUNT);
-    a[2].createAccount(account::ACCOUNT_NUMBER_COUNT);
+    a[0].createAccount(x);
+    a[1].createAccount(x);
+    a[2].createAccount(x);
     return 0;
 }
