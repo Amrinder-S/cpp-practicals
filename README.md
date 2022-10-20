@@ -1,2 +1,2 @@
 # cpp-practicals
-boring CPP practicals go here.
+This repository is made for CPP practicals. nothing interesting around here. you can look around anyways.
