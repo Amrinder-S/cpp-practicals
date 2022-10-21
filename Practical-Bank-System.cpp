@@ -31,7 +31,6 @@ class account {
     cout<<"| Name: "<<CUSTOMER_NAME<<" | Account Type: "<<(ACCOUNT_TYPE==0?" | Savings Account |":" | Current Account |")<<endl<<" ";
         for(int i=0;i<77+CUSTOMER_NAME.length();i++)
         cout<<"_";
-    cout<<"\n";
     ACCOUNT_NUMBER_COUNT += 1;
     }
 
