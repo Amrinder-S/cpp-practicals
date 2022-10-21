@@ -24,11 +24,14 @@ class account {
         goto acc_type_wrong;
     }
     ACCOUNT_NUMBER = x;
-    
-    cout<<"| Account Number 000000"<<ACCOUNT_NUMBER<<" Created. ";
-    cout<<"| Name: "<<CUSTOMER_NAME<<" | Account Type: "<<(ACCOUNT_TYPE==0?" | Savings Account |":" | Current Account |");
-    
-
+    cout<<" ";
+    for(int i=0;i<77+CUSTOMER_NAME.length();i++)
+        cout<<"_";//77+
+    cout<<"\n| Account Number 000000"<<ACCOUNT_NUMBER<<" Created. ";
+    cout<<"| Name: "<<CUSTOMER_NAME<<" | Account Type: "<<(ACCOUNT_TYPE==0?" | Savings Account |":" | Current Account |")<<endl<<" ";
+        for(int i=0;i<77+CUSTOMER_NAME.length();i++)
+        cout<<"_";
+    cout<<"\n";
     ACCOUNT_NUMBER_COUNT += 1;
     }
 
