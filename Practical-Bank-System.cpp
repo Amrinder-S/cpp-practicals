@@ -2,6 +2,8 @@
 #define SAVINGS_ACCOUNT 1
 #include<iostream>
 #include<string>
+
+
 using namespace std;
 
 class account {
@@ -12,8 +14,8 @@ class account {
     public:
     static int ACCOUNT_NUMBER_COUNT;
     
-    void createAccount(int x) {
-    cout<<"\n\nCreating Account Number 000000"<<x<<endl;
+    account() {
+    cout<<"\n\nCreating Account Number 000000"<<ACCOUNT_NUMBER_COUNT<<endl;
     cout<<"Enter Customer Name: ";
     getline(cin >> ws, CUSTOMER_NAME, '\n');
     acc_type_wrong:
@@ -23,7 +25,7 @@ class account {
         cout<<"Invalid Account Type.\n";
         goto acc_type_wrong;
     }
-    ACCOUNT_NUMBER = x;
+    ACCOUNT_NUMBER = ACCOUNT_NUMBER_COUNT;
     cout<<" ";
     for(int i=0;i<77+CUSTOMER_NAME.length();i++)
         cout<<"_";//77+
@@ -36,13 +38,10 @@ class account {
 
 };
 
+
 int account::ACCOUNT_NUMBER_COUNT = 1;
 int x= account::ACCOUNT_NUMBER_COUNT;
 int main()
 {
-    account a[3];
-    a[0].createAccount(x);
-    a[1].createAccount(x);
-    a[2].createAccount(x);
     return 0;
 }
