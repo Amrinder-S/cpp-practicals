@@ -43,5 +43,35 @@ int account::ACCOUNT_NUMBER_COUNT = 1;
 int x= account::ACCOUNT_NUMBER_COUNT;
 int main()
 {
+   ofstream wf("bank.dat", ios::out | ios::binary);
+   if(!wf) {
+      cout << "Cannot open file!" << endl;
+      return 1;
+    account accs[3];
+   for(int i = 0; i < 3; i++)
+      wf.write((char *) &accs[i], sizeof(account));
+   wf.close();
+
+   /* --------------------------------------- */
+   ifstream rf("student.dat", ios::out | ios::binary);
+   if(!rf) {
+      cout << "Cannot open file!" << endl;
+      return 1;
+   }
+   Student rstu[3];
+   for(int i = 0; i < 3; i++)
+      rf.read((char *) &rstu[i], sizeof(Student));
+   rf.close();
+   if(!rf.good()) {
+      cout << "Error occurred at reading time!" << endl;
+      return 1;
+   }
+   cout<<"Student's Details:"<<endl;
+   for(int i=0; i < 3; i++) {
+      cout << "Roll No: " << wstu[i].roll_no << endl;
+      cout << "Name: " << wstu[i].name << endl;
+      cout << endl;
+   }
+   return 0;
     return 0;
 }

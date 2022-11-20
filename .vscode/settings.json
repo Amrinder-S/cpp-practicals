@@ -5,6 +5,7 @@
         "string": "cpp",
         "xstring": "cpp",
         "ostream": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "iosfwd": "cpp"
     }
 }
